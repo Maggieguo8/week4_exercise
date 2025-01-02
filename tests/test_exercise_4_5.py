@@ -1,3 +1,4 @@
+"""Test something..."""
 import pytest
 import numpy as np
 
@@ -30,6 +31,7 @@ import numpy as np
     ]))
 ])
 def test_insert(grid_size, coordinates, board):
+    """Test insert."""
     from life import Game, Pattern, glider
 
     g = Game(grid_size)

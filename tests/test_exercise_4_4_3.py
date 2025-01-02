@@ -1,8 +1,10 @@
+"""Test something."""
 import pytest
 import numpy as np
 
 
 def test_flip_vertical():
+    """Test flip vertical?."""
     from life import Pattern
 
     test_pattern = np.array([
@@ -23,6 +25,7 @@ def test_flip_vertical():
 
 
 def test_flip_horizontal():
+    """Test flip horizontal?."""
     from life import Pattern
 
     test_pattern = np.array([
@@ -36,13 +39,15 @@ def test_flip_horizontal():
         [1, 1, 1, 0, 0, 0, 1, 0]
     ])
     test_flipped = Pattern(test_pattern)
-    assert np.array_equal(test_flipped.flip_horizontal().grid, hflip_pattern),\
+    assert np.array_equal(
+        test_flipped.flip_horizontal().grid, hflip_pattern), \
         "flip_horizontal() transformation incorrect"
     assert np.array_equal(test_flipped.grid, test_pattern), \
         "flip_horizontal() modifying original pattern"
 
 
 def test_flip_diag():
+    """Test flip horizontal?."""
     from life import Pattern
 
     test_pattern = np.array([
@@ -95,6 +100,7 @@ def test_flip_diag():
     ]))
 ])
 def test_rotations(n, transformation):
+    """Test rotations."""
     from life import Pattern
 
     test_pattern = np.array([
