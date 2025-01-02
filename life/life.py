@@ -85,6 +85,22 @@ class Game:
         pyplot.matshow(self.board, fignum=0, cmap='binary')
         pyplot.show()
 
+    def insert(self, pattern, square):
+        """
+        Insert modifies the game board.
+
+        As to insert the pattern provided at a location centred on the location
+        given by the pair of integers.
+        """
+        if len(pattern.grid) % 2:
+            step = len(pattern.grid) // 2
+            key = (slice(square[0]-step, square[0]+step+1),
+                   slice(square[1]-step, square[1]+step+1))
+            self.__setitem__(key, pattern.grid)
+
+        else:
+            NotImplemented
+
 
 class Pattern:
     """
