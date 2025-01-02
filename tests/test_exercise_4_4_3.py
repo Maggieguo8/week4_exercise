@@ -4,7 +4,7 @@ import numpy as np
 
 
 def test_flip_vertical():
-    """Test flip vertical?."""
+    """Test flip vertical."""
     from life import Pattern
 
     test_pattern = np.array([

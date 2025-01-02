@@ -84,3 +84,57 @@ class Game:
         pyplot.clf()
         pyplot.matshow(self.board, fignum=0, cmap='binary')
         pyplot.show()
+
+
+class Pattern:
+    """
+    New Class Pattern.
+
+    A pattern such as a glider maintains its behaviour,
+    if translated, reflected or rotated.
+    """
+
+    def __init__(self, grid):
+        """Grid is a numpy array of 1s and 0s."""
+        self.grid = grid
+
+    def flip_vertical(self):
+        """
+        Upside down reflection of Pattern.
+
+        Returns a new Pattern whose rows are in reversed order,
+        so that the pattern is upside down.
+        """
+        return Pattern(self.grid[::-1])
+
+    def flip_horizontal(self):
+        """
+        Reflection of Pattern.
+
+        Returns a new Pattern whose rows are in reversed order,
+        so that the pattern is reversed left-right.
+        """
+        grid_new = np.array([rows[::-1] for rows in self.grid])
+        return Pattern(grid_new)
+
+    def flip_diag(self):
+        """
+        Flip around the diagonal.
+
+        Returns a new pattern which is the transpose of the original.
+        """
+        return Pattern(np.transpose(self.grid))
+
+    def rotate(self, n):
+        """
+        Rotation of Pattern.
+
+        Return a new Pattern which is the original pattern rotated
+        through n right angles anticlockwise.
+        """
+        if n == 0:
+            return self
+        elif n % 4 == 1:
+            return self.flip_horizontal().flip_diag()
+        else:
+            return self.rotate(n-1).flip_horizontal().flip_diag()
