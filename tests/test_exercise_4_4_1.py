@@ -1,7 +1,7 @@
 import pytest  # noqaF401
 import numpy as np
 
-"""Test the import and pattern,"""
+"""Test correct import and the class Pattern."""
 
 
 def test_import_pattern():

@@ -1,4 +1,4 @@
-"""Test the import is correct."""
+"""Test the import."""
 
 
 def test_import():

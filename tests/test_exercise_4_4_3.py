@@ -1,4 +1,4 @@
-"""Test something."""
+"""Test the methods in Pattern."""
 import pytest
 import numpy as np
 
@@ -25,7 +25,7 @@ def test_flip_vertical():
 
 
 def test_flip_horizontal():
-    """Test flip horizontal?."""
+    """Test flip horizontal."""
     from life import Pattern
 
     test_pattern = np.array([
@@ -47,7 +47,7 @@ def test_flip_horizontal():
 
 
 def test_flip_diag():
-    """Test flip horizontal?."""
+    """Test flip diagonal."""
     from life import Pattern
 
     test_pattern = np.array([
